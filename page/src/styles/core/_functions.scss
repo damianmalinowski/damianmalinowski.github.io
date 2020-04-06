@@ -1,0 +1,9 @@
+$base-font-size: 16px;
+
+/** rem calculator  
+ * - base on root font-size in pixels, the function calculate proper value in rem.
+*/
+@function rc($size) {
+  $remSize: $size / $base-font-size;
+  @return #{$remSize}rem;
+}

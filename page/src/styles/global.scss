@@ -1,0 +1,10 @@
+@import 'base.scss';
+
+html {
+  font-size: $base-font-size;
+  font-family: Roboto, 'Arial Regular', sans-serif;
+}
+
+#gatsby-focus-wrapper {
+  overflow: hidden;
+}

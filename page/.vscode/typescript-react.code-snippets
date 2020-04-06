@@ -1,0 +1,150 @@
+{
+  "react typescript import styles": {
+    "prefix": "importStyles",
+    "body": ["import styles from './${TM_FILENAME_BASE}.module.scss';", ""],
+    "description": "react typescript import styles"
+  },
+  "react typescript import bfc bridge": {
+    "prefix": "importBFCBridge",
+    "body": ["import * as Bridge from '@BFC/domain/ndt-domain';", ""],
+    "description": "react typescript import styles"
+  },
+  "import base component scss": {
+    "prefix": "importScssComponentBase",
+    "body": ["@import 'Scripts/client/styles/component-base.scss';"],
+    "description": "import base component scss"
+  },
+  "react typescript function": {
+    "prefix": "xcf",
+    "body": [
+      "import * as React from 'react';",
+      "",
+      "export interface I${1:CompName}Props { }",
+      "",
+      "export const ${1:CompName}: React.FC<I${1:CompName}Props> = (props) => (",
+      "  <div>",
+      "    $0",
+      "  </div>",
+      ");"
+    ],
+    "description": "react typescript function"
+  },
+  "react short typescript function": {
+    "prefix": "scf",
+    "body": ["export const ${1:CompName}: React.FC<{}> = (props) => (", "  <div>", "    $0", "  </div>", ");"],
+    "description": "react typescript function"
+  },
+  "react typescript props deconstruct": {
+    "prefix": "rrsp",
+    "body": ["const {$0} = this.props;"],
+    "description": "react typescript props deconstruct"
+  },
+  "react component": {
+    "prefix": "xcc",
+    "body": [
+      "import * as React from 'react';",
+      "",
+      "export interface ${1:compName}Props { }",
+      "",
+      "export interface ${1:compName}State { }",
+      "",
+      "export class ${1:compName} extends React.Component<${1:compName}Props, ${1:compName}State> {",
+      "    constructor(props: ${1:compName}Props) {",
+      "        super(props);",
+      "    }",
+      "",
+      "    public render() {",
+      "        return <div>",
+      "            $0",
+      "        </div>;",
+      "    }",
+      "}"
+    ],
+    "description": "react typescript component"
+  },
+  "react container component": {
+    "prefix": "xccc",
+    "body": [
+      "import * as React from 'react';",
+      "import { connect } from 'react-redux';",
+      "import { RootState } from 'store';",
+      "",
+      "export interface ${1:Name}ContainerProps {",
+      "",
+      "}",
+      "",
+      "export interface StateProps {",
+      "",
+      "}",
+      "",
+      "export interface DispachProps {",
+      "",
+      "}",
+      "",
+      "type ${1:Name}ContainerComponentProps = ${1:Name}ContainerProps & StateProps & DispachProps;",
+      "",
+      "class ${1:Name}ContainerComponent extends React.Component<${1:Name}ContainerComponentProps> {",
+      "    constructor(props: ${1:Name}ContainerComponentProps) {",
+      "        super(props);",
+      "    }",
+      "",
+      "    public render() {",
+      "        return <div>",
+      "            Container$0",
+      "        </div>;",
+      "    }",
+      "}",
+      "",
+      "const mapStateToProps = (rootState: RootState):StateProps  => {",
+      "    return {",
+      "        // ...rootState.planningTab",
+      "    };",
+      "};",
+      "",
+      "const mapDispachToProps: DispachProps = {",
+      "    //...jobActions",
+      "}",
+      "",
+      "export const ${1:Name}Container = connect<StateProps, DispachProps, ${1:Name}ContainerProps>(",
+      "    mapStateToProps,",
+      "    mapDispachToProps",
+      ")(${1:Name}ContainerComponent);"
+    ],
+    "description": "react container component"
+  },
+  "react test initialization": {
+    "prefix": "xti",
+    "body": [
+      "import { expect } from 'chai';",
+      "",
+      "describe('${1:describeName}', () => {",
+      "  it('${2:testName}', () => {",
+      "    // arrange",
+      "",
+      "    // act",
+      "",
+      "    // assert",
+      "    expect($0).to.eq(true);",
+      "  });",
+      "});",
+      ""
+    ],
+    "description": "react test initialization"
+  },
+  "react add test case": {
+    "prefix": "xit",
+    "body": [
+      "",
+      "  it('${1:testName}', () => {",
+      "    // arrange",
+      "",
+      "    // act",
+      "",
+      "    // assert",
+      "    expect($0).to.eq(true);",
+      "  });",
+      ""
+    ],
+    "description": "react add test case"
+  }
+}
